@@ -26,6 +26,7 @@ public final class Square {
     if(input < 0){
       throw new IllegalArgumentException();
     }
+
     throw new UnsupportedOperationException("Not yet implemented"); // TODO Replace with implementation.
   }
 
