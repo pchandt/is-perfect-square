@@ -6,6 +6,8 @@ package com.tlglearning;
  */
 public final class Square {
 
+  public static final String ILLEGAL_INPUT_FORMAT = "input = %, d; negative values not allowed.";
+
   private Square() {
     // NOTE: There is NO need to do anything with this constructor! The method you will implement in
     // this class is static; thus, there is no need to create instances of this class. Making the
@@ -24,10 +26,12 @@ public final class Square {
    */
   public static boolean isPerfectSquare(long input) throws IllegalArgumentException {
     if(input < 0){
-      throw new IllegalArgumentException();
-    }
+      throw new IllegalArgumentException(String.format(ILLEGAL_INPUT_FORMAT, input));
 
-    throw new UnsupportedOperationException("Not yet implemented"); // TODO Replace with implementation.
+    }
+    double root = Math.sqrt(input);
+    long roundedRoot = Math.round(root);
+    return (roundedRoot * roundedRoot == input);
   }
 
 }
